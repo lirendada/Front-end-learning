@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let username = prompt("请输入您的姓名:");
+        if (username) {
+            document.write("<h1>欢迎，" + username + "！</h1>");
+        } else {
+            document.write("<h1>欢迎，访客！</h1>");
+        }
+
+        console.log("hha");
+        console.log(Date.now().toLocaleString());
+        
+        for (var i = 0; i < 3; i++) {
+         setTimeout(() => console.log(i), 50);
+        }
+
+        
+    </script>
+</body>
+</html>

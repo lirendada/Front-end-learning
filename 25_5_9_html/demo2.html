@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center" border="1" cellpadding="1" cellspacing="0" width="200" height="20"> 
+        <tr> 
+            <th>菜名</th> 
+            <th>单价</th> 
+            <th>折扣</th> 
+        </tr> 
+        <tr> 
+            <td align="center">红烧茄子</td> 
+            <td align="center">￥18</td> 
+            <td align="center">8.8折</td> 
+        </tr> 
+        <tr> 
+            <!--colspan合并列， rowspan合并行--> 
+            <td colspan="3" align="right">总价：￥18</td> 
+        </tr> 
+    </table>
+
+
+    <ul> 
+        <li>ul/li是无序列表</li> 
+        <li>ul/li是无序列表</li> 
+    </ul> 
+    <ol> 
+        <li>ol/li是有序列表</li> 
+        <li>ol/li是有序列表</li> 
+    </ol> 
+    <dl> 
+        <dt>dl/dt是小标题</dt> 
+        <dd>dl/dd是围绕标题的描述</dd> 
+        <dd>dl/dd是围绕标题的描述</dd> 
+    </dl>
+
+    <form>
+        <input type="text" placeholder="input标签默认是文本框"> <br/> 
+        <input type="password" placeholder="type属性为password是密码框"> <br/> 
+    
+        <input type="radio" name="sex">type属性为radio是单选框,name属性相同则默认为同一组-男 <br/> 
+        <input type="radio" name="sex" checked="checked">type属性为radio是单选框-女<br/> 
+    
+        <input type="checkbox"> checkbox是复选框-吃饭 <br/> 
+        <input type="checkbox"> checkbox是复选框-睡觉 <br/> 
+        <input type="checkbox"> checkbox是复选框-打游戏<br/> 
+        <input type="checkbox" id="testid"> 
+        <label for="testid">label标签for属性与对应的输入框id对应起来，这时候点击文字也能选中</label><br/> 
+    
+        <input type="button" value="button是普通按钮" onclick="alert('alert是提示框调用函数')"><br/> 
+        <input type="submit" value="submit是提交按钮">点击这里就会向服务器提交表单域中的表单数据<br/> 
+        <input type="file" value="file是文件选择按钮框"><br/> 
+        <input type="reset" value="reset是清空按钮，会清空表单域的所有数据"><br>
+    </form>
+
+    <select> 
+        <option selected="selected">--请选择年份--</option> 
+        <option>1990</option> 
+        <option>1991</option> 
+        <option>1992</option> 
+    </select>
+
+    <textarea name="文本域标签" id="" cols="30" rows="10" placeholder="textarea是文本域标签"> </textarea>
+
+
+    <div>div是个大盒子独占一行</div> 
+    <span>span是个小盒子并不独占一行</span> 
+    <span>span是个小盒子并不独占一行</span>
+
+    <a href="demo3.html">点我跳转到demo3</a>
+</body>
+</html>

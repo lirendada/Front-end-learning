@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 1. 复制数组或对象
+        */
+        const arr1 = [11, 22, 33];
+
+        // ❌普通赋值：浅拷贝
+        const arr2 = arr1;
+        arr2.push(44);
+        console.log(arr1); 
+
+        // ✅正确做法：把arr1复制一份给arr2，使用拓展运算符...
+        const arr3 = [...arr1];
+        arr3.push(55);
+        console.log(arr1);
+
+
+        const obj1 = {
+            id: 10001,
+            name: 'liren',
+            age: 9
+        };
+
+        // ❌普通赋值：浅拷贝
+        const obj2 = obj1;
+        obj2.age = 10;
+        console.log(obj1);
+
+        // ✅正确做法：把obj1复制一份给obj2，使用拓展运算符...
+        const obj3 = {...obj1};
+        obj3.age = 11;
+        console.log(obj1);
+
+
+        /**
+         * 2. 合并数组或对象
+         */
+        const arr4 = [1, 2, 3];
+        const arr5 = [4, 5, 6];
+        const mergedArr = [...arr4, ...arr5]; // 合并数组
+        console.log(mergedArr);
+        
+        const obj4 = {
+            name: 'liren',
+            height: 178
+        };
+        const obj5 = {
+            age: 9,
+            address: 'beijing'
+        };
+        const mergedObj = {...obj4, ...obj5}; // 合并对象，注意: 同名属性会覆盖💥
+        console.log(mergedObj);
+    </script>
+</body>
+</html>

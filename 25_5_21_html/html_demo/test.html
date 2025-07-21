@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格对齐示例</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left; /* 水平对齐方式 */
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center; /* 表头居中对齐 */
+        }
+        td {
+            vertical-align: middle; /* 数据单元格垂直居中对齐 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>第一行</p>
+    <p>第二行<br>第三行</p>
+
+    <ol>
+        <li>第一项</li>
+        <li>第二项</li>
+    </ol>
+
+    <ul>
+        <li>第一项</li>
+        <li>第二项</li>
+
+    </ul>
+
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>20</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>18</td>
+            <td>female</td>
+        </tr>
+    </table>
+
+    <form>
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+    </br>
+        <label for="age">年龄：</label>
+        <input type="number" id="age" name="age" min="1" max="100" required>
+        <button type="submit">提交</button>
+    </form>
+</html>

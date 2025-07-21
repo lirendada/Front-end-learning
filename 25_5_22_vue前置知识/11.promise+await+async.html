@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 不使用promise之前，出现了回调地狱问题
+        // 需求：延迟2秒之后输出1, 完了之后延迟1秒输出2, 完了之后延迟1秒输出3
+        // setTimeout(() => {
+        //     console.log(1);
+        //     setTimeout(() => {
+        //         console.log(2)
+        //         setTimeout(() => {
+        //             console.log(3);
+        //         }, 1000)
+        //     }, 1000)
+        // }, 2000)
+
+
+        // promise的基本使用：
+/*
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("ok");
+                reject("error");
+            })
+        })
+
+        p.then(() => {
+            console.log(1);
+        }, () => {
+            console.log(2);
+        })
+*/
+
+
+        // 消除回调地狱，但是不够优雅
+/*
+        function delay(duration, n) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(n);
+                }, duration);
+            })
+        }
+
+        delay(2000, 1)
+        .then((n1) => {
+            console.log(n1);
+            return delay(1000, 2); // 必须要返回，外面才能链式调用，而不是继续调用，那就又变成回调地狱了
+        }).then((n2) => {
+            console.log(n2);
+            return delay(1000, 3);
+        }).then((n3) => {
+            console.log(n3);
+        })
+*/
+
+
+        // 使用await+async搭配promise优雅解决
+        function delay(duration, n) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(n);
+                }, duration);
+            })
+        }
+
+        async function log() {
+            const n1 = await delay(2000, 1);
+            console.log(n1);
+            const n2 = await delay(1000, 2);
+            console.log(n2);
+            const n3 = await delay(1000, 3);
+            console.log(n3);
+        }
+
+        log();
+    </script>
+</body>
+</html>

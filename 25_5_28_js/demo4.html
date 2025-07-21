@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = new Array();
+        let arr2 = [1, 2, 3];
+        arr.push(1, 2, 3);
+        console.log(arr);
+        
+        let student = {
+            name: '蔡徐坤',
+            height: 175,
+            weight: 170,
+            sayHello: function() {
+                console.log("hello");
+            }
+        };
+
+        console.log(student.name);
+        console.log(student.height);
+        console.log(student['weight']);
+        student.sayHello();
+
+        class People {
+            constructor(name, height, weight) {
+                this.name = name;
+                this.height = height;
+                this.weight = weight;
+            }
+
+            hello() {
+                console.log("hello~");
+            }
+
+            static other = "other";
+        }
+
+        let zhangsan = new People("张三", 175, 60);
+        console.log(zhangsan);
+        zhangsan.hello();
+        console.log(zhangsan.other);
+        console.log(People.other);
+        
+        
+    </script>
+</body>
+</html>

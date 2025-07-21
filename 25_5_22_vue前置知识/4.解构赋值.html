@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 数组解构
+        let arr = [11, 22, 33, 44, 55, 66];
+        
+        let [a, b, c] = arr;
+        console.log(a, b, c);
+
+        let [, d, e] = arr; // 一个逗号跳过一个元素
+        console.log(d, e);
+
+        let [,,, f, g] = arr; // 跳过前面三个元素，取后面两个
+        console.log(f, g);
+
+        let [h, ...r1] = arr; // 剩余的全部给到变量 r1
+        console.log(h, r1);
+
+        // 小练习：把下面数组中的3, 4赋值给变量 a1,b1
+        const arr1 = [2, [3, 4], 5];
+        [, [a1, b1]] = arr1;
+        console.log(a1, b1);
+
+        // 2. 对象解构
+        const obj = {
+            name : 'liren',
+            age : 18,
+            phone : '120983012'
+        }
+
+        // let {name, age, phone} = obj; // 不需要考虑顺序，只需要出现关键字即可
+        // console.log(name, age, phone);
+
+        const {name, ...r2} = obj;
+        console.log(name, r2);
+
+        // 把obj的name赋值给变量uname，需要特别指定
+        const {name : uname} = obj;
+        console.log(uname);
+    </script>
+</body>
+</html>

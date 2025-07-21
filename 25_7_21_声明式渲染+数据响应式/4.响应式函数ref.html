@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <p>{{ str }}</p>
+        <p>{{ bol }}</p>
+        <p>{{ arr }}</p>
+        <p>{{ obj }}</p>
+
+        <button @click="onClick">修改数据</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const str = ref('liren');
+                const bol = ref(true);
+                const arr = ref([]);
+
+                const obj = ref({
+                    name: 'liren',
+                    age: 18
+                })
+
+                onClick = () => {
+                    str.value = "123";
+                    bol.value = false;
+                    arr.value.push(1233, 3123);
+                    obj.value.name = 'nlaisnd';
+                    obj.value.age = -1;
+                }
+
+                return {
+                    str,
+                    bol,
+                    arr,
+                    obj,
+                    onClick
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

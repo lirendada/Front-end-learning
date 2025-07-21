@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            id: 10001,
+            name: 'liren',
+            age: 9,
+            address: 'beijing'
+        };
+
+        // 之前遍历对象：for-in循环
+        for(let key in obj) {
+            console.log(key, obj[key]);
+        }
+        
+        // 💥获取对象键的数组：Object.keys()
+        const keys = Object.keys(obj);
+        console.log(keys);
+
+        // 然后可以遍历数组
+        keys.forEach(key => {
+            console.log(obj[key]);
+        })
+
+        // 需求：获取 obj 所有以 a 开头的属性值
+        Object.keys(obj)
+            .filter(key => key.startsWith('a'))
+            .forEach(key => {
+                console.log(obj[key]);
+            });
+        
+    </script>
+</body>
+</html>

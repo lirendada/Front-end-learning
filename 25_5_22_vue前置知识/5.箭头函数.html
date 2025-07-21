@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ///////////////////// 非箭头函数 /////////////////////
+        // 有名函数
+        function func() {
+            //...
+        }
+
+        // 函数表达式
+        const func2 = function() {
+            //...
+        }
+
+        ///////////////////// 箭头函数 /////////////////////
+        // 1. 语法
+        const func3 = () => {
+            //...
+        }
+
+        const func4 = (x, y) => {
+            return x + y;
+        }
+        console.log(func4(13, 31));
+
+        // 2. 特性
+        // 2.1 当参数只有一个时，可以省略小括号
+        const func5 = x => {
+            console.log(x);
+        }
+        func5(10);
+
+        // 2.2 当函数体只有一句时，可以省略大括号，此时箭头函数自带return功能
+        const add = (x, y) => x + y
+        console.log(add(13, 31));
+
+        // 2.3 当直接返回一个对象时，为了简写，需要给对象加一对小括号
+        const state1 = () => {
+            return {
+                token: 'xxx',
+                userInfo: {
+                    name: 'liren',
+                    age: 19
+                }
+            }
+        };
+        console.log(state1());
+
+        const state2 = () => ({
+            token: 'xxx',
+            userInfo: {
+                name: 'liren',
+                age: 19
+            }
+        });
+        console.log(state2());
+
+        // 3. 应用
+        setTimeout(function() {
+            console.log(666);
+        }, 2000);
+        
+        setTimeout(() => {
+            console.log(666);
+        }, 2000);
+    </script>
+</body>
+</html>

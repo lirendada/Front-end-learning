@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        // 取值
+        const obj = {
+            name: 'vue3',
+            age: 9
+        };
+
+        console.log(obj.name);
+        console.log(obj.age);
+
+        console.log(obj['name']);
+        console.log(obj['age']);
+
+        let x = 'name';
+        let y = 'age';
+
+        console.log(obj[x]);
+        console.log(obj[y]);
+
+        // 简写：属性
+        const tmp = {
+            x:x,
+            y:y
+        };
+        console.log(tmp);
+        console.log(tmp['y']);
+
+        // 简写：方法
+        const tmp2 = {
+            fn : function() {
+                console.log("liren");
+            }
+        };
+        tmp2.fn();
+
+        const tmp3 = {
+            fn() {
+                console.log("lirendada");
+            }
+        }
+        tmp3.fn();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button type="button">点我消失</button>
+
+    <form>
+        <input type="text" name="name" id="name">
+        <input type="checkbox" name="subscribe">
+        <select name="city" id="city">
+            <option value="bj">北京</option>
+        </select>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(this).hide();
+            });
+        });
+
+        $("#name").hover(function() {
+            $(this).css("background-color", "red");
+        });
+
+        $(":text").mouseout(function() {
+            $(this).css("background-color", "white");
+        });
+
+        console.log($("#city").text());
+        console.log($("#city").html());
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 存储
+        localStorage.setItem('key1', 'value1');
+        sessionStorage.setItem('key2', 'value2');
+
+        // 取
+        const k1 = localStorage.getItem('key1'); // 'value1'
+        console.log(k1);
+        const k2 = sessionStorage.getItem('key2'); // 'value2'
+        console.log(k2);
+
+        // 删除
+        localStorage.removeItem('key1');
+        sessionStorage.removeItem('key2');
+
+        // 存储对象需要进行序列化和反序列化💥
+        const obj = { id: 10001, name: 'liren', age: 9 };
+
+        localStorage.setItem('user', JSON.stringify(obj)); // 序列化存储
+        const user = JSON.parse(localStorage.getItem('user')); // 反序列化
+        console.log(user);
+        
+        
+    </script>
+</body>
+</html>

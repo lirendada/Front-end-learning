@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <!-- 1. 变量名 -->
+        <h1>{{ msg }}</h1>
+
+        <!-- 2. 对象.属性 -->
+        <p>{{ obj.name }} + {{ obj.age }}</p>
+
+        <!-- 3. 三元表达式 -->
+        <p>{{ obj.age > 18 ? "已成年" : "未成年" }}</p>
+
+        <!-- 4. 算数运算 -->
+        <p>{{ obj.age + 1 }}</p>
+
+        <!-- 5. 调用函数 -->
+        <p>{{ fn() }}</p>
+
+        <!-- 6. 调用方法 -->
+        <p>{{ msg.split(' ').length }}</p>
+    </div>
+
+    <script>
+        Vue.createApp({
+            setup() {
+                const msg = "lirendada nb !";
+                const obj = {
+                    name: "liren",
+                    age: 19
+                }
+
+                fn = () => {
+                    return 666;
+                }
+
+                return {
+                    msg,
+                    obj,
+                    fn
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>

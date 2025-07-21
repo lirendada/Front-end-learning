@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = Number.MAX_VALUE;
+        console.log(n*2);
+        console.log(-n*2);
+        console.log("liren" * 2);
+        // Number.apply();
+
+        let arr = [1, 2, 555];
+        arr.forEach(v => console.log(v));
+
+        // Set
+        const s = new Set([1, 2, 4]); 
+        let st = new Set([3, 2, 1]);
+        st = s;
+        console.log(st);
+        console.log(st.has(4));
+        st.add("liren");
+        console.log(st);
+        st.forEach(v => console.log(v));
+        
+        // Map
+        const m = new Map(); m.set('key', 123); 
+        console.log(m.get('key')); // 123
+        m.forEach((v, k) => console.log(`key:${k}  value:${v}`));
+        
+    </script>
+</body>
+</html>
