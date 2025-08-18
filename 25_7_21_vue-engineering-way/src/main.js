@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
-import App from './03-指令补充+样式绑定+计算属性+侦听器/4_成绩管理系统案例.vue'
+import App from './App.vue'
+const app = createApp(App)
 
-createApp(App).mount('#app')
+app.mount('#app')
