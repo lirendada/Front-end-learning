@@ -1,9 +1,8 @@
 <script setup>
-    import MyGoods from './components1/MyGoods.vue';
-
-    // 提供数据
+    import MyGoods from './components2/MyGoods.vue';
+    import {ref} from 'vue'
     // 商品列表
-    const goodsList = [
+    const goodsList = ref([
       {
         id: '4001172',
         name: '称心如意手摇咖啡磨豆机咖啡豆研磨机',
@@ -60,13 +59,26 @@
         picture:
           'https://yanxuan-item.nosdn.127.net/8896b897b3ec6639bbd1134d66b9715c.jpg'
       }
-    ]
+    ])
+
+    // 砍价功能对应的方法，由父组件提供
+    const bargain = (index, price) => {
+        goodsList.value[index].price -= price
+    }
 </script>
 
 <template>
   <div class="list">
     <!-- 在子组件中，传入自定义属性 -->
-    <MyGoods v-for="item in goodsList" :key="item.id" :urlImg="item.picture" :price="item.price" :title="item.name"/>
+    <MyGoods 
+      v-for="(item, index) in goodsList" 
+      :key="item.id" 
+      :urlImg="item.picture" 
+      :price="item.price" 
+      :title="item.name"
+      :idx="index"
+      @ccc="bargain"
+    />
   </div>
 </template>
 
