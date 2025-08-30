@@ -19,8 +19,11 @@ const router = createRouter({
       path: '/my',
       component: My
     }, {
-      path: '/friend',
-      component: Friend
+    //   path: '/friend',
+    //   component: Friend
+        name: 'Friend',
+        path: '/friend/:fid',
+        component: Friend
     }
   ]
 })
