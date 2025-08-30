@@ -8,6 +8,9 @@ import Find from '@/views/Find.vue'
 import Friend from '@/views/Friend.vue'
 import My from '@/views/My.vue'
 import _404 from '@/views/404.vue'
+import Recommend from '@/views/Recommend.vue'
+import Ranking from '@/views/Ranking.vue'
+import SongList from '@/views/SongList.vue'
 
 const router = createRouter({
 //   history: createWebHashHistory(),
@@ -20,7 +23,22 @@ const router = createRouter({
     },
     {
       path: '/find',
-      component: Find
+      component: Find,
+      redirect: '/find/recommend',
+      children: [
+        {
+          path: 'recommend',
+          component: Recommend
+        },
+        {
+          path: 'ranking',
+          component: Ranking
+        },
+        {
+          path: 'songlist',
+          component: SongList
+        }
+      ]
     }, {
       path: '/my',
       component: My
