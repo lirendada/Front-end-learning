@@ -4,10 +4,10 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 // 导入 3 个页面组件
-import Find from '@/views1/Find.vue'
-import Friend from '@/views1/Friend.vue'
-import My from '@/views1/My.vue'
-import _404 from '@/views1/404.vue'
+import Find from '@/views/Find.vue'
+import Friend from '@/views/Friend.vue'
+import My from '@/views/My.vue'
+import _404 from '@/views/404.vue'
 
 const router = createRouter({
 //   history: createWebHashHistory(),
@@ -25,11 +25,10 @@ const router = createRouter({
       path: '/my',
       component: My
     }, {
-    //   path: '/friend',
-    //   component: Friend
-        name: 'Friend',
-        path: '/friend/:fid',
-        component: Friend
+      // path: '/friend',
+      name: 'Friend',
+      path: '/friend/:fid',
+      component: Friend
     },
     {
         path: '/:pathmatch(.*)*',
