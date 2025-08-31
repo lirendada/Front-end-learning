@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-    import { useStockStore } from '@/store1/stock';
+    import { useStockStore } from '@/09-Pinia：vue3状态管理/1.pinia的基本使用/store1/stock';
     const stockStore = useStockStore()
     
 </script>
